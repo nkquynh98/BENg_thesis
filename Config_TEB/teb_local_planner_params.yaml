@@ -39,13 +39,16 @@ TebLocalPlannerROS:
 
   #Obstacles
 
-  min_obstacle_distance: 0.4
+  min_obstacle_distance: 0.3
   include_costmap_obstacles: True
   costmap_obstacles_behind_robot_dist: 1.0
   obstacle_poses_affected: 30
   costmap_converter_plugin: ""
   costmap_converter_spin_thread: True
   costmap_converter_rate: 5
+
+  #Dynamic Obstacle
+  include_dynamic_obstacles: True
 
   # Optimization 
 
