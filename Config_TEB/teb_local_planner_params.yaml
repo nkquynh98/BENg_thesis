@@ -5,7 +5,7 @@ TebLocalPlannerROS:
   #Trajectory
 
   teb_autosize: True
-  dt_ref: 0.5
+  dt_ref: 0.3
   dt_hysteresis: 0.1
   global_plan_overwrite_orientation: True
   max_global_plan_lookahead_distance: 3.0
@@ -16,7 +16,7 @@ TebLocalPlannerROS:
   max_vel_x: 0.5
   max_vel_x_backwards: 0.2
   max_vel_theta: 0.3
-  acc_lim_x: 0.5
+  acc_lim_x: 10 #0.5
   acc_lim_theta: 0.5
   min_turning_radius: 0.0
 
@@ -39,7 +39,7 @@ TebLocalPlannerROS:
 
   #Obstacles
 
-  min_obstacle_distance: 0.3
+  min_obstacle_distance: 0.2
   include_costmap_obstacles: True
   costmap_obstacles_behind_robot_dist: 1.0
   obstacle_poses_affected: 30
@@ -48,7 +48,7 @@ TebLocalPlannerROS:
   costmap_converter_rate: 5
 
   #Dynamic Obstacle
-  include_dynamic_obstacles: True
+  include_dynamic_obstacles: False
 
   # Optimization 
 
