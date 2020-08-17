@@ -171,7 +171,7 @@
       </script>
     </actor>
 
-    <actor name="actor8">
+    <actor name="actor1">
       <skin>
         <filename>walk.dae</filename>
       </skin>
@@ -183,18 +183,61 @@
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
-            <pose>8 0.7 0 0 0 1.17</pose>
+            <pose>18 -2.2 0 0 0 1.17</pose>
           </waypoint>
           <waypoint>
-            <time>10</time>
-            <pose>8 1.7 0 0 0 -1.17</pose>
+            <time>12</time>
+            <pose>18 1.2 0 0 0 1.17</pose>
           </waypoint>
           <waypoint>
-            <time>20</time>
-            <pose>8 0.7 0 0 0 1.17</pose>
+            <time>13</time>
+            <pose>18 1.2 0 0 0 -1.17</pose>
+          </waypoint>
+          <waypoint>
+            <time>25</time>
+            <pose>18 -2.2 0 0 0 -1.17</pose>
+          </waypoint>
+          <waypoint>
+            <time>26</time>
+            <pose>18 -2.2 0 0 0 1.17</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
+
+    <actor name="actor2">
+      <skin>
+        <filename>walk.dae</filename>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>19 1 0 0 0 -1.17</pose>
+          </waypoint>
+          <waypoint>
+            <time>12</time>
+            <pose>19 -2.3 0 0 0 -1.17</pose>
+          </waypoint>
+          <waypoint>
+            <time>13</time>
+            <pose>19 -2.3 0 0 0 1.17</pose>
+          </waypoint>
+          <waypoint>
+            <time>25</time>
+            <pose>19 1 0 0 0 1.17</pose>
+          </waypoint>
+          <waypoint>
+            <time>26</time>
+            <pose>19 1 0 0 0 -1.17</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
   </world>
 </sdf>
