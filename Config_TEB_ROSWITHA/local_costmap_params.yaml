@@ -1,13 +1,13 @@
 local_costmap:
- global_frame: /odom_combined
- robot_base_frame: /base_footprint
- update_frequency: 1
- publish_frequency: 1.0001
+ global_frame: odom_combined
+ robot_base_frame: base_footprint
+ update_frequency: 5
+ publish_frequency: 5.0001
  rolling_window: true
  transform_tolerance: 0.5
- width: 5.0
- height: 5.0
- resolution: 0.025
+ width: 3.0
+ height: 3.0
+ resolution: 0.1
  origin_x: 0
  origin_y: 0
 
