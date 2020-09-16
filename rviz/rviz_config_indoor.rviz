@@ -280,8 +280,25 @@ Visualization Manager:
       Marker Topic: /standalone_converter/costmap_polygon_markers
       Name: Marker
       Namespaces:
-        Polygons: true
+        {}
       Queue Size: 100
+      Value: true
+    - Class: rviz/Axes
+      Enabled: true
+      Length: 1
+      Name: Axes
+      Radius: 0.10000000149011612
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic: /move_base/human/human/costmap
+      Unreliable: false
+      Use Timestamp: false
       Value: true
   Enabled: true
   Global Options:
@@ -308,7 +325,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 20.737770080566406
+      Distance: 21.290420532226562
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -323,10 +340,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.1847964525222778
+      Pitch: 1.5197961330413818
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.165416717529297
+      Yaw: 5.780412197113037
     Saved: ~
 Window Geometry:
   Displays:

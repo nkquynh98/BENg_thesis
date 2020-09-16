@@ -3,7 +3,7 @@
   <arg name="gui" default="true" />
   <arg name="headless" default="false" />
   <!--arg name="world_name" default="$(find jackal_gazebo)/worlds/jackal_race.world" -->
-  <arg name="world_name" default="$(find indoor_thesis)/worlds/dynamic_complex_indoor.world" />
+  <arg name="world_name" default="$(find indoor_thesis)/worlds/complex_indoor.world" />
   <!--Spawn Rviz for visualization-->
   <arg name="rvizconfig" default="$(find indoor_thesis)/rviz/rviz_config_indoor.rviz"/>
 

@@ -1,10 +1,56 @@
 local_costmap:
    global_frame: map
    robot_base_frame: base_link
-   update_frequency: 5
-   publish_frequency: 5.0001
-   width: 5.5 #decrease to have better computation force
-   height: 5.5
+   update_frequency: 10
+   publish_frequency: 10.0001
+   width: 10 #decrease to have better computation force
+   height: 10
    resolution: 0.1
    static_map: false
    rolling_window: true
+   plugins: 
+      - {name: obstacle_layer,   type: "costmap_2d::ObstacleLayer"}
+      - {name: custom_costmap, type: "custom_segmentation_layer::CustomSegmentationLayer"}
+   custom_costmap:
+      segmentation_topic: "/segmentation/data"
+      object_list: freepath human obstacle
+      freepath: {
+         name: "freepath",
+         id: 1,
+         publish: true ,
+         dynamic: false,
+         obstacle: false
+      }
+      human: {
+         name: "human",
+         id: 2,
+         publish: true ,
+         dynamic: true,
+         obstacle: true
+      }
+      obstacle: {
+         name: "obstacle",
+         id: 0,
+         publish: true ,
+         dynamic: false,
+         obstacle: true
+      }
+
+
+
+   obstacle_layer:
+      obstacle_range: 4
+      raytrace_range: 5
+      max_obstacle_height: 0.4
+      track_unknown_space: true
+
+      observation_sources: laser_scan_sensor
+
+      laser_scan_sensor: {
+         data_type: LaserScan,
+         topic: front/scan,
+         expected_update_rate: 0.1,
+         marking: true,
+         clearing: true
+      }
+
