@@ -1,0 +1,15 @@
+   <launch>
+     <arg name="map_file" default="$(find indoor_thesis)/maps/MapPerfect2d.yaml"/>       <!-- path of map file -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" respawn="true" />
+   <node pkg="tf" type="static_transform_publisher" name="fake_localization1"
+   args="0 0 0 0 0 0 base_link laser 100" />
+    <node pkg="tf" type="static_transform_publisher" name="fake_localization2"
+   args="0 0 0 0 0 0 base_link base_footprint 100" />
+
+   <node pkg="tf" type="static_transform_publisher" name="fake_localization3"
+   args="0 0 0 0 0 0 odom_combined base_link 100" />
+
+  <node pkg="tf" type="static_transform_publisher" name="laser"
+   args="0.0 0 0.0 0 0 0 map odom_combined   100" />
+     <node pkg="indoor_thesis" type="publish_pointcloud.py" name="publish_pointcloud"/>
+   </launch>    

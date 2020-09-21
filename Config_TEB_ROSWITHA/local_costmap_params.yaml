@@ -1,16 +1,55 @@
 local_costmap:
  global_frame: odom_combined
  robot_base_frame: base_footprint
- update_frequency: 5
- publish_frequency: 5.0001
+ update_frequency: 10
+ publish_frequency: 10.0001
  rolling_window: true
- transform_tolerance: 0.5
- width: 5.0
- height: 5.0
+ transform_tolerance: 0.5 
+ width: 10.0
+ height: 10.0
  resolution: 0.05
  origin_x: 0
  origin_y: 0
+ segmentation_layer:
+  segmentation_topic: "/segmentation/data"
+  max_distance: 5
+  min_distance: 0.5
+  segmentationTrust_offset: 0.2
+  segmentationTrust_base: 5
+  
+  object_list: obstacle freepath human chair
+  obstacle: {
+      name: "obstacle",
+      id: 0,
+      publish: true,
+      dynamic: false,
+      obstacle: true
+  }
+  freepath: {
+      name: "freepath",
+      id: 1,  
+      publish: true ,
+      dynamic: false,
+      obstacle: false
+  }
+  human: {
+      name: "human",
+      id: 2,
+      publish: true ,
+      dynamic: true,
+      obstacle: true
+  }
+  chair: {
+      name: "chair",
+      id: 3,
+      publish: true ,
+      dynamic: true,
+      obstacle: true
+  }
 
-plugins:
-  - {name: obstacle_layer,   type: "costmap_2d::ObstacleLayer"}
-  - {name: inflation_layer,  type: "costmap_2d::InflationLayer"}
+ inflation_layer:
+  inflation_radius: 50
+ plugins:
+  - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
+  - {name: segmentation_layer,   type: "custom_segmentation_layer::CustomSegmentationLayer"}
+  #- {name: inflation_layer, type: "costmap_2d::InflationLayer"}
