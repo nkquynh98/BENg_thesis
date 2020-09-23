@@ -11,5 +11,5 @@
 
   <node pkg="tf" type="static_transform_publisher" name="laser"
    args="0.0 0 0.0 0 0 0 map odom_combined   100" />
-     <node pkg="indoor_thesis" type="publish_pointcloud.py" name="publish_pointcloud"/>
+    <!--  <node pkg="indoor_thesis" type="publish_pointcloud.py" name="publish_pointcloud"/> -->
    </launch>    
